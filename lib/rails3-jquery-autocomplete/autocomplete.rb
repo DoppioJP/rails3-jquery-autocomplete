@@ -47,6 +47,19 @@ module Rails3JQueryAutocomplete
           method = options[:column_name] if options.has_key?(:column_name)
 
           term = params[:term]
+          
+          # Where using method to be evaled in controller action only
+          where = options[:where]
+          if where.is_a?(Hash)
+            where.each do |v, k|
+              if k.is_a?(Symbol)
+                k = eval(k.to_s) 
+                where[v] = k
+              end
+            end
+          end
+          
+          options[:where] = where
 
           if term && !term.blank?
             #allow specifying fully qualified class name for model object
