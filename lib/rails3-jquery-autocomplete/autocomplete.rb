@@ -53,7 +53,7 @@ module Rails3JQueryAutocomplete
           if where.is_a?(Hash)
             where.each do |v, k|
               if k.is_a?(Symbol)
-                k = eval(k.to_s) 
+                k = send(k.to_s) 
                 where[v] = k
               end
             end
