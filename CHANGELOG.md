@@ -1,5 +1,6 @@
 # Changelog
 
+* 1.0.12 Bug fix
 * 1.0.11 Allow passing into :where clause a method symbol to be called within generated controller action
 * 1.0.6 Postgres or non-postgres queries are now determined at model level
 * 1.0.3 Fixed Formtastic 2.0 + Ruby 1.8.7 compat issue
