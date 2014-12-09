@@ -41,8 +41,11 @@ module Rails3JQueryAutocomplete
     # end
     #
     module ClassMethods
-      def autocomplete(object, method, options = {})
+      def autocomplete(object, method, e_options = {})
         define_method("autocomplete_#{object}_#{method}") do
+
+          # Need to manipulate duplication of the data, not the e_options hash
+          options = e_options.deep_dup
 
           method = options[:column_name] if options.has_key?(:column_name)
 
