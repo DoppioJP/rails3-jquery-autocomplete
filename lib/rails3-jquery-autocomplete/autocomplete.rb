@@ -51,10 +51,10 @@ module Rails3JQueryAutocomplete
           # Where using method to be evaled in controller action only
           where = options[:where]
           if where.is_a?(Hash)
-            where.each do |v, k|
-              if k.is_a?(Symbol)
-                k = send(k.to_s) 
-                where[v] = k
+            where.each do |k, v|
+              if v.is_a?(Symbol)
+                v = send(v.to_s)
+                where[k] = v
               end
             end
           end
