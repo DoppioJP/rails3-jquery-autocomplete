@@ -1,5 +1,6 @@
 # Changelog
 
+* 1.0.13 Bug fix: fixed now by protecting external options Hash from modifications while manipulating the options internally in autocomplete controller method
 * 1.0.12 Bug fix
 * 1.0.11 Allow passing into :where clause a method symbol to be called within generated controller action
 * 1.0.6 Postgres or non-postgres queries are now determined at model level
